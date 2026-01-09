@@ -31,7 +31,7 @@ export const CustomNavbar = () => {
           </li>
           <li>
             <Link to="/carrito" className="opacity-90 hover:opacity-100">
-              <CartWidget count={0} />
+              <CartWidget count={10} />
             </Link>
           </li>
         </ul>
