@@ -3,4 +3,8 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import { TiendaApp } from "./TiendaApp";
 
-createRoot(document.getElementById("root")!).render(<TiendaApp />);
+createRoot(document.getElementById("root")!).render(
+  <StrictMode>
+    <TiendaApp />
+  </StrictMode>
+);
