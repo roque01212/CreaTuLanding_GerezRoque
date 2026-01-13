@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
-import { getProductById } from "../../services/products.mock.service";
+import { getProductById } from "../../assets/services/products.mock.service";
 import { Product } from "../../data/product";
 import { PageHeader } from "../../components/ui/PageHeader";
 import { ProductDetailContainer } from "../../components/products/ProductDetailContainer";

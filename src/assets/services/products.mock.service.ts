@@ -1,4 +1,4 @@
-import { Product, products } from "../data/product";
+import { Product, products } from "../../data/product";
 
 export const getProducts = (): Promise<Product[]> => {
   const promiseProducts = new Promise<Product[]>((resolve, reject) => {

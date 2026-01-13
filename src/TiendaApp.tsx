@@ -1,5 +1,5 @@
 import { RouterProvider } from "react-router";
-import { appRouter } from "./assets/router/app.route";
+import { appRouter } from "./router/app.route";
 
 export const TiendaApp = () => {
   return (

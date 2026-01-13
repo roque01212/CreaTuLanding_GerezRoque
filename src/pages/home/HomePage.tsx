@@ -1,6 +1,6 @@
 import { PageHeader } from "../../components/ui/PageHeader";
 import { ProductListContainer } from "../../components/products/ProductListContainer";
-import { getProducts } from "../../services/products.mock.service";
+import { getProducts } from "../../assets/services/products.mock.service";
 import { useEffect, useState } from "react";
 import type { Product } from "../../data/product";
 

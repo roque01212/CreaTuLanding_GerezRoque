@@ -2,7 +2,7 @@ import { useNavigate, useParams } from "react-router";
 import { PageHeader } from "../../components/ui/PageHeader";
 import { ProductListContainer } from "../../components/products/ProductListContainer";
 import { useEffect, useState } from "react";
-import { getProductByCategory } from "../../services/products.mock.service";
+import { getProductByCategory } from "../../assets/services/products.mock.service";
 import { Product } from "../../data/product";
 import { CustomButton } from "../../components/CustomButton";
 const categoriesInclud = ["bebidas", "comidas", "postres"];
