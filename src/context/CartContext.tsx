@@ -1,4 +1,4 @@
-import { createContext, useMemo, useState } from "react";
+import { createContext, useEffect, useMemo, useState } from "react";
 import { Product } from "../data/product";
 
 interface Props {
@@ -11,7 +11,7 @@ interface CartItem {
 }
 
 interface CartContextProps {
-  cart: CartItem[];
+  carts: CartItem[];
   totalItems: number;
   addItem: (product: Product, quantity: number) => void;
   removeItem: (item: number) => void;
@@ -23,17 +23,23 @@ interface CartContextProps {
 
 export const CartContext = createContext({} as CartContextProps);
 
+const getCartLocalStorage = (): CartItem[] => {
+  const carts = localStorage.getItem("Cart-Product");
+
+  return carts ? JSON.parse(carts) : [];
+};
+
 export const CartContextProvider = ({ children }: Props) => {
-  const [cart, setCart] = useState<CartItem[]>([]);
+  const [carts, setCarts] = useState<CartItem[]>(getCartLocalStorage());
 
   const totalItems = useMemo(() => {
     let total = 0;
-    cart.forEach((item) => (total += item.quantity));
+    carts.forEach((item) => (total += item.quantity));
     return total;
-  }, [cart]);
+  }, [carts]);
 
   const addItem = (product: Product, quantity: number) => {
-    setCart((prev) => {
+    setCarts((prev) => {
       const index = prev.findIndex((p) => p.product.id === product.id);
 
       if (index >= 0) {
@@ -49,39 +55,43 @@ export const CartContextProvider = ({ children }: Props) => {
   };
 
   const removeItem = (productId: number) => {
-    setCart((prev) => prev.filter((item) => item.product.id !== productId));
+    setCarts((prev) => prev.filter((item) => item.product.id !== productId));
   };
 
   const clearCart = () => {
-    setCart([]);
+    setCarts([]);
   };
 
   const increaseItem = (productId: number) => {
-    setCart((prev) =>
+    setCarts((prev) =>
       prev.map((item) => {
         if (item.product.id !== productId) return item;
         const nextQTy = Math.min(item.product.stock, item.quantity + 1);
         return { ...item, quantity: nextQTy };
-      })
+      }),
     );
   };
 
   const decreaseItem = (productId: number) => {
-    setCart((prev) =>
+    setCarts((prev) =>
       prev
         .map((item) => {
           if (item.product.id !== productId) return item;
           const nextQty = Math.max(0, item.quantity - 1);
           return { ...item, quantity: nextQty };
         })
-        .filter((item) => item.quantity > 0)
+        .filter((item) => item.quantity > 0),
     );
   };
+
+  useEffect(() => {
+    localStorage.setItem("Cart-Product", JSON.stringify(carts));
+  }, [carts]);
 
   return (
     <CartContext.Provider
       value={{
-        cart,
+        carts,
         totalItems,
         addItem,
         removeItem,

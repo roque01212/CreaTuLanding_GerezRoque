@@ -6,7 +6,7 @@ import { CustomButton } from "../../components/CustomButton";
 
 export const CartPage = () => {
   const {
-    cart,
+    carts,
     totalItems,
     removeItem,
     clearCart,
@@ -16,11 +16,11 @@ export const CartPage = () => {
 
   const totalPrice = useMemo(
     () =>
-      cart.reduce((acc, item) => acc + item.product.price * item.quantity, 0),
-    [cart]
+      carts.reduce((acc, item) => acc + item.product.price * item.quantity, 0),
+    [carts],
   );
 
-  if (cart.length === 0) {
+  if (carts.length === 0) {
     return (
       <>
         <PageHeader
@@ -55,18 +55,18 @@ export const CartPage = () => {
 
       <div className="mt-6 grid gap-6 lg:grid-cols-[1fr_360px]">
         <section className="space-y-4">
-          {cart.map(({ product, quantity }) => {
+          {carts.map(({ product, quantity }) => {
             const subTotal = product.price * quantity;
 
             return (
               <article
                 key={product.id}
-                className="rounded-xl border border-white/10 bg-white/5 p-4 flex gap-4 items-center"
+                className="rounded-xl border border-white/10 bg-white/5 p-4 flex flex-col sm:flex-row sm:items-center gap-4"
               >
                 <img
                   src={product.img}
                   alt={product.title}
-                  className="w-20 h-20 object-cover rounded-lg border border-white/10 "
+                  className="w-full sm:w-20 h-44 sm:h-20 object-cover rounded-lg border border-white/10"
                 />
 
                 <div className="flex-1 min-w-0">
@@ -75,31 +75,38 @@ export const CartPage = () => {
                     {product.category}
                   </p>
 
-                  <div className="mt-2 flex items-center flex-wrap gap-4 text-sm">
-                    <span className="opacity-90">Cantidad: {quantity}</span>
-                    <span className="opacity-90">
-                      Precio USD: {product.price.toFixed(2)}
-                    </span>
-                    <span className="font-semibold">
-                      Subtotal: USD: {subTotal.toFixed(2)}
-                    </span>
-                    <div className="flex items-center gap-2">
-                      <CustomButton
-                        variant="ghost"
-                        onClick={() => decreaseItem(product.id)}
-                      >
-                        -
-                      </CustomButton>
+                  <div className="mt-3 grid gap-2 text-sm sm:grid-cols-2 sm:items-center">
+                    <div className="flex flex-wrap gap-x-4 gap-y-1 opacity-90">
+                      <span>Precio: USD {product.price.toFixed(2)}</span>
+                      <span className="font-semibold">
+                        Subtotal: USD {subTotal.toFixed(2)}
+                      </span>
+                    </div>
 
-                      <span className="min-w-8 text-center">{quantity}</span>
+                    <div className="flex items-center justify-between sm:justify-end gap-3">
+                      <span className="opacity-80">Cantidad:</span>
 
-                      <CustomButton
-                        variant="ghost"
-                        onClick={() => increaseItem(product.id)}
-                        disabled={quantity >= product.stock}
-                      >
-                        +
-                      </CustomButton>
+                      <div className="flex items-center gap-2">
+                        <CustomButton
+                          variant="ghost"
+                          onClick={() => decreaseItem(product.id)}
+                          disabled={quantity <= 1}
+                        >
+                          -
+                        </CustomButton>
+
+                        <span className="min-w-8 text-center font-semibold">
+                          {quantity}
+                        </span>
+
+                        <CustomButton
+                          variant="ghost"
+                          onClick={() => increaseItem(product.id)}
+                          disabled={quantity >= product.stock}
+                        >
+                          +
+                        </CustomButton>
+                      </div>
                     </div>
                   </div>
                 </div>

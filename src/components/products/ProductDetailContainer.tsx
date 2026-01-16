@@ -22,7 +22,7 @@ export const ProductDetailContainer = ({ product }: Props) => {
           className="  w-full h-80 object-cover"
         />
       </div>
-      <div className="rounded-xl border border-white/10 bg-white/5 p-4">
+      <div className="rounded-xl lg:h-80  border sm:w-120 border-white/10 bg-white/5 p-4">
         <p className="opacity-70 mb-1 capitalize">{product.category}</p>
         <h2 className="text-2xl font-semibold">{product.title}</h2>
 
