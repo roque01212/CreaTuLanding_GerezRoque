@@ -1,7 +1,11 @@
 import { Link, NavLink } from "react-router";
 import CartWidget from "./CartWidget";
+import { use } from "react";
+import { CartContext } from "../context/CartContext";
 
 export const CustomNavbar = () => {
+  const { totalItems } = use(CartContext);
+
   const navClass = ({ isActive }: { isActive: boolean }) =>
     isActive ? "font-semibold underline" : "opacity-80 hover:opacity-100";
   return (
@@ -24,14 +28,16 @@ export const CustomNavbar = () => {
               Bebidas
             </NavLink>
           </li>
+
           <li>
             <NavLink to={"/categoria/postres"} className={navClass}>
               Postres
             </NavLink>
           </li>
+
           <li>
             <Link to="/carrito" className="opacity-90 hover:opacity-100">
-              <CartWidget count={10} />
+              <CartWidget count={totalItems} />
             </Link>
           </li>
         </ul>

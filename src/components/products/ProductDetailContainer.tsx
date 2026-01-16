@@ -1,11 +1,18 @@
+import { use } from "react";
 import { Product } from "../../data/product";
 import { ItemCount } from "../ItemCount";
+import { CartContext } from "../../context/CartContext";
 
 interface Props {
   product: Product;
 }
 
 export const ProductDetailContainer = ({ product }: Props) => {
+  const { addItem } = use(CartContext);
+
+  const onAddToCart = (count: number) => {
+    addItem(product, count);
+  };
   return (
     <article className="w-full flex flex-col items-center justify-center gap-5 mt-6 lg:flex-row">
       <div className="rounded-xl overflow-hidden border border-white/10 bg-white/5">
@@ -27,7 +34,7 @@ export const ProductDetailContainer = ({ product }: Props) => {
           <span className="text-xl font-semibold">USD: {product.price} </span>
           <span className="text-xl opacity-70"> Stock: {product.stock} </span>
         </div>
-        <ItemCount stock={product.stock} />
+        <ItemCount stock={product.stock} onAddToCart={onAddToCart} />
       </div>
     </article>
   );

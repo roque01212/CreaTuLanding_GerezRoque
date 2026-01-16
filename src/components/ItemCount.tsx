@@ -1,21 +1,36 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { CustomButton } from "./CustomButton";
 
 interface Props {
   stock: number;
+  onAddToCart: (count: number) => void;
 }
 
-export const ItemCount = ({ stock }: Props) => {
+export const ItemCount = ({ stock, onAddToCart }: Props) => {
   const [qty, setQty] = useState<number>(0);
 
-  const handleDecrease = () => {
-    if (qty <= 0) return;
+  useEffect(() => {
+    setQty(stock > 0 ? 1 : 0);
+  }, [stock]);
 
-    setQty(qty - 1);
+  const canDecrease = qty > 1;
+  const canIncrement = qty < stock;
+  const canAdd = stock > 0 && qty > 0;
+
+  const handleDecrease = () => {
+    if (!canDecrease) return;
+
+    setQty((prev) => prev - 1);
   };
+
   const handleIncrease = () => {
-    if (qty >= stock) return;
-    setQty(qty + 1);
+    if (!canIncrement) return;
+    setQty((prev) => prev + 1);
+  };
+
+  const handleAdd = () => {
+    if (!canAdd) return;
+    onAddToCart(qty);
   };
 
   return (
@@ -23,7 +38,11 @@ export const ItemCount = ({ stock }: Props) => {
       <p className="opacity-70 text-sm mb-2">Cantidad</p>
 
       <div className="flex items-center gap-3">
-        <CustomButton variant="ghost" onClick={handleDecrease}>
+        <CustomButton
+          variant="ghost"
+          onClick={handleDecrease}
+          disabled={!canDecrease}
+        >
           -
         </CustomButton>
 
@@ -34,11 +53,13 @@ export const ItemCount = ({ stock }: Props) => {
         <CustomButton
           variant="ghost"
           onClick={handleIncrease}
-          //   disabled={!canIncrease}
+          disabled={!canIncrement}
         >
           +
         </CustomButton>
-        <CustomButton variant="primary">Agregar</CustomButton>
+        <CustomButton variant="primary" onClick={handleAdd} disabled={!canAdd}>
+          Agregar
+        </CustomButton>
       </div>
     </div>
   );
