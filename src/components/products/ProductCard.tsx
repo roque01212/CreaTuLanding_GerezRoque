@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import { Product } from "../../data/product";
+import { Product } from "../../type/product";
 
 interface Props {
   product: Product;
@@ -15,7 +15,7 @@ export const ProductCard = ({
         <img
           src={`${product.img}`}
           alt={`${product.title}`}
-          className="w-full h-40 object-cover rounded-xl"
+          className="w-full h-40 object-cover rounded-xl hover:scale-105 transition-transform"
           loading="lazy"
         />
       </Link>

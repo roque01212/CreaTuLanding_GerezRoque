@@ -1,4 +1,4 @@
-import { Product, products } from "../../data/product";
+import { Product, products } from "../data/product";
 
 export const getProducts = (): Promise<Product[]> => {
   const promiseProducts = new Promise<Product[]>((resolve, reject) => {
@@ -27,7 +27,7 @@ export const getProductById = (id: string): Promise<Product> => {
 export const getProductByCategory = (category: string): Promise<Product[]> => {
   return new Promise<Product[]>((resolve, reject) => {
     const productsByCategory = products.filter(
-      (products) => products.category === category
+      (products) => products.category === category,
     );
     setTimeout(() => {
       if (!productsByCategory) {

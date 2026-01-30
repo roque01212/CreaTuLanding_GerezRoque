@@ -2,9 +2,9 @@ import { useNavigate, useParams } from "react-router";
 import { PageHeader } from "../../components/ui/PageHeader";
 import { ProductListContainer } from "../../components/products/ProductListContainer";
 import { useEffect, useState } from "react";
-import { getProductByCategory } from "../../assets/services/products.mock.service";
-import { Product } from "../../data/product";
 import { CustomButton } from "../../components/CustomButton";
+import { getProductByCategory } from "../../services/products";
+import { Product } from "../../type/product";
 const categoriesInclud = ["bebidas", "comidas", "postres"];
 
 export const CategoryPage = () => {
@@ -14,8 +14,6 @@ export const CategoryPage = () => {
 
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
-
-  console.log(slug);
 
   const load = async () => {
     try {

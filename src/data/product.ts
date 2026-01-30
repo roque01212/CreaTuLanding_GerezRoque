@@ -16,7 +16,7 @@ export const products: Product[] = [
     price: 6.5,
     category: "comidas",
     stock: 18,
-    img: "https://placehold.co/600x400/27ae60/FFF?text=Ensalada+Cesar+Grande",
+    img: "/images/products/comidas/Ensalada-César.png",
     description: "Clásica, fresca y completa con pollo, croutones y aderezo.",
   },
   {
@@ -25,7 +25,7 @@ export const products: Product[] = [
     price: 5.9,
     category: "comidas",
     stock: 20,
-    img: "https://placehold.co/600x400/2ecc71/FFF?text=Wrap+de+Pollo",
+    img: "/images/products/comidas/Wrap-Pollo-Vegetales.png",
     description: "Wrap tibio con pollo, mix de hojas y salsa suave.",
   },
   {
@@ -34,7 +34,7 @@ export const products: Product[] = [
     price: 4.8,
     category: "comidas",
     stock: 15,
-    img: "https://placehold.co/600x400/16a085/FFF?text=Sandwich+Integral+Atun",
+    img: "/images/products/comidas/Sándwich-Integral-Atún.png",
     description: "Pan integral, atún, verduras frescas y toque de limón.",
   },
   {
@@ -43,7 +43,7 @@ export const products: Product[] = [
     price: 7.2,
     category: "comidas",
     stock: 12,
-    img: "https://placehold.co/600x400/1abc9c/FFF?text=Bowl+Proteico+Quinoa",
+    img: "/images/products/comidas/Bowl-Proteico.png",
     description: "Quinoa, pollo grillado, verduras y semillas.",
   },
   {
@@ -52,7 +52,7 @@ export const products: Product[] = [
     price: 6.9,
     category: "comidas",
     stock: 10,
-    img: "https://placehold.co/600x400/0e6655/FFF?text=Bowl+Veggie+Lentejas",
+    img: "/images/products/comidas/Bowl-Veggie.png",
     description: "Lentejas, vegetales al horno y aderezo casero.",
   },
   {
@@ -61,7 +61,7 @@ export const products: Product[] = [
     price: 7.8,
     category: "comidas",
     stock: 14,
-    img: "https://placehold.co/600x400/117a65/FFF?text=Milanesa+Pollo+Horno",
+    img: "/images/products/comidas/Milanesa-Pollo.png",
     description: "Crocante, liviana y hecha al horno.",
   },
   {
@@ -70,7 +70,7 @@ export const products: Product[] = [
     price: 6.2,
     category: "comidas",
     stock: 9,
-    img: "https://placehold.co/600x400/196f3d/FFF?text=Tarta+Integral+Verduras",
+    img: "/images/products/comidas/Tarta-Integral-Verduras.png",
     description: "Masa integral y relleno de estación.",
   },
   {
@@ -79,7 +79,7 @@ export const products: Product[] = [
     price: 4.5,
     category: "comidas",
     stock: 25,
-    img: "https://placehold.co/600x400/229954/FFF?text=Empanadas+Horno+x2",
+    img: "/images/products/comidas/Empanadas-Horno.png",
     description: "Dos empanadas al horno, opción carne o pollo.",
   },
   {
@@ -88,7 +88,7 @@ export const products: Product[] = [
     price: 8.4,
     category: "comidas",
     stock: 8,
-    img: "https://placehold.co/600x400/145a32/FFF?text=Hamburguesa+Integral",
+    img: "/images/products/comidas/Hamburguesa.png",
     description: "Medallón casero, pan integral y vegetales.",
   },
   {
@@ -97,7 +97,7 @@ export const products: Product[] = [
     price: 9.2,
     category: "comidas",
     stock: 7,
-    img: "https://placehold.co/600x400/7d6608/FFF?text=Pasta+Casera+Tomate",
+    img: "/images/products/comidas/Pasta-Casera.png",
     description: "Pasta casera con salsa suave y especias.",
   },
 
@@ -107,7 +107,7 @@ export const products: Product[] = [
     price: 2.8,
     category: "bebidas",
     stock: 30,
-    img: "https://placehold.co/600x400/f1c40f/000?text=Limonada+Natural+500ml",
+    img: "/images/products/bebidas/limonada.png",
     description: "Refrescante, con limón real y endulzado suave.",
   },
   {
@@ -116,7 +116,7 @@ export const products: Product[] = [
     price: 3.5,
     category: "bebidas",
     stock: 22,
-    img: "https://placehold.co/600x400/f39c12/000?text=Licuado+Banana+500ml",
+    img: "/images/products/bebidas/licuado-banana.png",
     description: "Cremoso y nutritivo, ideal post-entreno.",
   },
   {
@@ -125,7 +125,7 @@ export const products: Product[] = [
     price: 3.7,
     category: "bebidas",
     stock: 20,
-    img: "https://placehold.co/600x400/e74c3c/FFF?text=Licuado+Frutilla+500ml",
+    img: "/images/products/bebidas/licuado-frutilla.png",
     description: "Frutillas bien frescas, sabor intenso.",
   },
   {
@@ -134,7 +134,7 @@ export const products: Product[] = [
     price: 3.2,
     category: "bebidas",
     stock: 18,
-    img: "https://placehold.co/600x400/d35400/FFF?text=Jugo+Naranja+500ml",
+    img: "/images/products/bebidas/jugo-naranja.png",
     description: "Exprimido, sin conservantes.",
   },
   {
@@ -143,7 +143,7 @@ export const products: Product[] = [
     price: 3.1,
     category: "bebidas",
     stock: 16,
-    img: "https://placehold.co/600x400/ca6f1e/FFF?text=Te+Helado+Durazno",
+    img: "/images/products/bebidas/te-helado-durazno.png",
     description: "Té frío suave con toque frutal.",
   },
   {
@@ -152,7 +152,7 @@ export const products: Product[] = [
     price: 2.4,
     category: "bebidas",
     stock: 40,
-    img: "https://placehold.co/600x400/6e2c00/FFF?text=Cafe+Americano",
+    img: "/images/products/bebidas/Café-Americano.png",
     description: "Café intenso, ideal para arrancar el día.",
   },
   {
@@ -161,7 +161,7 @@ export const products: Product[] = [
     price: 2.9,
     category: "bebidas",
     stock: 35,
-    img: "https://placehold.co/600x400/873600/FFF?text=Cafe+con+Leche",
+    img: "/images/products/bebidas/Café-con-Leche.png",
     description: "Equilibrado y cremoso.",
   },
   {
@@ -170,7 +170,7 @@ export const products: Product[] = [
     price: 1.2,
     category: "bebidas",
     stock: 60,
-    img: "https://placehold.co/600x400/3498db/FFF?text=Agua+Mineral+500ml",
+    img: "/images/products/bebidas/Agua-Mineral.png",
     description: "Bien fría, opción con o sin gas.",
   },
   {
@@ -179,7 +179,7 @@ export const products: Product[] = [
     price: 4.6,
     category: "bebidas",
     stock: 14,
-    img: "https://placehold.co/600x400/2e86c1/FFF?text=Smoothie+Verde",
+    img: "/images/products/bebidas/Smoothie-Verde.png",
     description: "Energía real: espinaca, manzana y limón.",
   },
   {
@@ -188,7 +188,7 @@ export const products: Product[] = [
     price: 3.0,
     category: "bebidas",
     stock: 24,
-    img: "https://placehold.co/600x400/1f618d/FFF?text=Limonada+con+Menta",
+    img: "/images/products/bebidas/Limonada-con-Menta.png",
     description: "Refrescante, ideal para verano.",
   },
 
@@ -198,7 +198,7 @@ export const products: Product[] = [
     price: 3.9,
     category: "postres",
     stock: 18,
-    img: "https://placehold.co/600x400/8e44ad/FFF?text=Yogur+con+Granola",
+    img: "/images/products/postres/Yogur-con-Granola.png",
     description: "Yogur cremoso con granola crocante.",
   },
   {
@@ -207,7 +207,7 @@ export const products: Product[] = [
     price: 4.2,
     category: "postres",
     stock: 10,
-    img: "https://placehold.co/600x400/9b59b6/FFF?text=Tarta+de+Manzana",
+    img: "/images/products/postres/Tarta-de-Manzana.png",
     description: "Dulzor justo y canela suave.",
   },
   {
@@ -216,7 +216,7 @@ export const products: Product[] = [
     price: 3.6,
     category: "postres",
     stock: 16,
-    img: "https://placehold.co/600x400/5b2c6f/FFF?text=Brownie+Porcion",
+    img: "/images/products/postres/Brownie.png",
     description: "Húmedo y chocolatoso, ideal con café.",
   },
   {
@@ -225,7 +225,7 @@ export const products: Product[] = [
     price: 3.3,
     category: "postres",
     stock: 14,
-    img: "https://placehold.co/600x400/7d3c98/FFF?text=Budin+de+Banana",
+    img: "/images/products/postres/Budín-de-Banana.png",
     description: "Casero, esponjoso y con sabor real.",
   },
   {
@@ -234,7 +234,7 @@ export const products: Product[] = [
     price: 3.8,
     category: "postres",
     stock: 22,
-    img: "https://placehold.co/600x400/76448a/FFF?text=Galletas+Avena+x6",
+    img: "/images/products/postres/Galletas-Avena.png",
     description: "Crujientes, livianas y llenadoras.",
   },
   {
@@ -243,7 +243,7 @@ export const products: Product[] = [
     price: 4.9,
     category: "postres",
     stock: 9,
-    img: "https://placehold.co/600x400/4a235a/FFF?text=Mousse+Chocolate",
+    img: "/images/products/postres/Mousse-de-Chocolate.png",
     description: "Textura suave con cacao intenso.",
   },
   {
@@ -252,7 +252,7 @@ export const products: Product[] = [
     price: 5.4,
     category: "postres",
     stock: 7,
-    img: "https://placehold.co/600x400/512e5f/FFF?text=Cheesecake+Porcion",
+    img: "/images/products/postres/Cheesecake.png",
     description: "Cremoso, base crocante y toque cítrico.",
   },
   {
@@ -261,7 +261,7 @@ export const products: Product[] = [
     price: 3.7,
     category: "postres",
     stock: 11,
-    img: "https://placehold.co/600x400/633974/FFF?text=Flan+Casero",
+    img: "/images/products/postres/Flan-Casero.png",
     description: "Clásico, suave y con caramelo.",
   },
   {
@@ -270,7 +270,7 @@ export const products: Product[] = [
     price: 4.3,
     category: "postres",
     stock: 12,
-    img: "https://placehold.co/600x400/6c3483/FFF?text=Pudding+de+Chia",
+    img: "/images/products/postres/Pudding-de-Chía.png",
     description: "Liviano, alto en fibra, ideal como snack.",
   },
   {
@@ -279,7 +279,7 @@ export const products: Product[] = [
     price: 4.0,
     category: "postres",
     stock: 20,
-    img: "https://placehold.co/600x400/af7ac5/FFF?text=Ensalada+de+Frutas",
+    img: "/images/products/postres/Ensalada-de-Frutas.png",
     description: "Frutas frescas de estación, lista para llevar.",
   },
 ];

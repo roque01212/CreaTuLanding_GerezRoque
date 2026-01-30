@@ -1,5 +1,5 @@
 import { createContext, useEffect, useMemo, useState } from "react";
-import { Product } from "../data/product";
+import { Product } from "../type/product";
 
 interface Props {
   children: React.ReactNode;
@@ -14,11 +14,11 @@ interface CartContextProps {
   carts: CartItem[];
   totalItems: number;
   addItem: (product: Product, quantity: number) => void;
-  removeItem: (item: number) => void;
+  removeItem: (item: string) => void;
   clearCart: () => void;
 
-  increaseItem: (productId: number) => void;
-  decreaseItem: (productId: number) => void;
+  increaseItem: (productId: string) => void;
+  decreaseItem: (productId: string) => void;
 }
 
 export const CartContext = createContext({} as CartContextProps);
@@ -54,7 +54,7 @@ export const CartContextProvider = ({ children }: Props) => {
     });
   };
 
-  const removeItem = (productId: number) => {
+  const removeItem = (productId: string) => {
     setCarts((prev) => prev.filter((item) => item.product.id !== productId));
   };
 
@@ -62,7 +62,7 @@ export const CartContextProvider = ({ children }: Props) => {
     setCarts([]);
   };
 
-  const increaseItem = (productId: number) => {
+  const increaseItem = (productId: string) => {
     setCarts((prev) =>
       prev.map((item) => {
         if (item.product.id !== productId) return item;
@@ -72,7 +72,7 @@ export const CartContextProvider = ({ children }: Props) => {
     );
   };
 
-  const decreaseItem = (productId: number) => {
+  const decreaseItem = (productId: string) => {
     setCarts((prev) =>
       prev
         .map((item) => {

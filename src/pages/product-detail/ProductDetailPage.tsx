@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
-import { getProductById } from "../../assets/services/products.mock.service";
-import { Product } from "../../data/product";
 import { PageHeader } from "../../components/ui/PageHeader";
 import { ProductDetailContainer } from "../../components/products/ProductDetailContainer";
 import { CustomButton } from "../../components/CustomButton";
+import { getProductById } from "../../services/products";
+import { Product } from "../../type/product";
 
 export const ProductDetailPage = () => {
   const { idProduct } = useParams<{ idProduct: string }>();

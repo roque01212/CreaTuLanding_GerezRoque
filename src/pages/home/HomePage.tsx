@@ -1,8 +1,9 @@
 import { PageHeader } from "../../components/ui/PageHeader";
 import { ProductListContainer } from "../../components/products/ProductListContainer";
-import { getProducts } from "../../assets/services/products.mock.service";
 import { useEffect, useState } from "react";
-import type { Product } from "../../data/product";
+
+import { Product } from "../../type/product";
+import { getProducts } from "../../services/products";
 
 export const HomePage = () => {
   const [products, setProducts] = useState<Product[]>([]);
@@ -48,6 +49,7 @@ export const HomePage = () => {
         title="Hola bienvenidos a Feed Good Food"
         subtitle="Elige favorito"
       />
+
       <ProductListContainer products={products} showCategory />
     </>
   );

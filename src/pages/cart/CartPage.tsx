@@ -146,13 +146,13 @@ export const CartPage = () => {
             <div className="pt-3 border-t border-white/10" />
           </div>
 
-          <div className="mt-4 flex flex-col gap-2">
-            <CustomButton
-              variant="primary"
-              onClick={() => console.log("Checkout (más adelante)")}
+          <div className="mt-4 flex flex-col gap-3">
+            <Link
+              className="bg-blue-500 p-2 rounded-md text-center"
+              to={"/checkout"}
             >
               Finalizar compra
-            </CustomButton>
+            </Link>
 
             <CustomButton variant="secondary" onClick={clearCart}>
               Vaciar carrito

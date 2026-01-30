@@ -1,7 +1,7 @@
 import { use } from "react";
-import { Product } from "../../data/product";
 import { ItemCount } from "../ItemCount";
 import { CartContext } from "../../context/CartContext";
+import { Product } from "../../type/product";
 
 interface Props {
   product: Product;

@@ -18,7 +18,7 @@ export const CustomButton = ({
   type = "button",
 }: Props) => {
   const base =
-    "inline-flex items-center border border-white/10 justify-center gap-2 rounded-xl px-4 py-2 text-sm font-medium transition focus:outline-none focus:ring-2 focus:ring-white/20";
+    "inline-flex items-center cursor-pointer border border-white/10 justify-center gap-2 rounded-xl px-4 py-2 text-sm font-medium transition focus:outline-none focus:ring-2 focus:ring-white/20";
 
   const variants = {
     primary: "bg-blue-600 hover:bg-blue-500 text-white",
